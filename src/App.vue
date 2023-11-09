@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="flex flex-1 justify-center items-center bg-gradient-to-bl from-purple-500 to-pink-500">
+  <div class="flex flex-1 justify-center items-center bg-pattern bg-cover">
     <router-view></router-view>
   </div>
 </template>
