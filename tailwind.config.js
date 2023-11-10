@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+import plugin from "tailwindcss/plugin"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -19,7 +19,7 @@ export default {
         container: `inset 0px 2px 0px 0px ${theme('colors.semiwhite')}, 0px 3px 0px 0px ${theme('colors.semiwhite')}`
       }),
       backgroundImage: {
-        pattern: 'url("/bkg_pattern.svg"), linear-gradient(to bottom left, #a855f7, #ec4899)',
+        pattern: 'url("/bkg_pattern.svg"), linear-gradient(200deg, #5c1ea6, #c8435e)',
       },
       keyframes: {
         bounceltl: {
