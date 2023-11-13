@@ -8,7 +8,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      main: ['sans-serif'],
+      main: ['Inter Tight', 'sans-serif'],
     },
     extend: {
       colors: {
@@ -18,6 +18,11 @@ export default {
         button: `0 6px 0 0 ${theme('colors.indigo.950')}`,
         container: `inset 0px 2px 0px 0px ${theme('colors.semiwhite')}, 0px 3px 0px 0px ${theme('colors.semiwhite')}`
       }),
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '2px 0 var(--tw-shadow-color), -2px 0 var(--tw-shadow-color), 0 2px var(--tw-shadow-color), 0 -2px var(--tw-shadow-color), 1px 1px var(--tw-shadow-color), -1px -1px var(--tw-shadow-color), 1px -1px var(--tw-shadow-color), -1px 1px var(--tw-shadow-color);',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+      },
       backgroundImage: {
         pattern: 'url("/bkg_pattern.svg"), linear-gradient(200deg, #5c1ea6, #c8435e)',
       },
@@ -32,6 +37,17 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    }),
+  ],
 }
 
