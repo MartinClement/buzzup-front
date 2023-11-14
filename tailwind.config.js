@@ -28,12 +28,19 @@ export default {
       },
       keyframes: {
         bounceltl: {
-          '0%, 100%': { transform: 'translateY(-1%)'},
-          '50%': { transform: 'translateY(5%)'},
+          '0%, 10%': { transform: 'translateY(0%)'},
+          '5%': { transform: 'translateY(8%)'},
+          '11%, 100%': { transform: 'translateY(0%)'},
         },
+        scaleup: {
+          '0%, 10%': { transform: 'scale(1)'},
+          '5%': { transform: 'scale(1.2)'},
+          '11%, 100%': { transform: 'scale(1)'},
+        }
       },
       animation: {
-        'bounce-litle': 'bounceltl .8s cubic-bezier(0.8, 0, 1,1) infinite',
+        'bounce-litle': 'bounceltl 5s cubic-bezier(0.8, 0, 1,1) infinite',
+        'scale-up': 'scaleup 5s cubic-bezier(0.8, 0, 1,1) infinite',
       }
     },
   },
