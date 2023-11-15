@@ -23,10 +23,10 @@ withDefaults(defineProps<LoginFormProps>(), {
     </div>
     <div class="flex flex-row gap-4 m-auto">
       <BaseButton>
-        <template #before-slot><PlayIcon /></template>Google
+        <template #before-slot><PlayIcon :scale="1.5"/></template>Google
       </BaseButton>
       <BaseButton>
-        <template #before-slot><PlayIcon /></template>Discord
+        <template #before-slot><PlayIcon :scale="1.5"/></template>Discord
       </BaseButton>
     </div>
   </form>
