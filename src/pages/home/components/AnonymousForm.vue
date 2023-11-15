@@ -24,8 +24,8 @@ const username = ref('');
         <BaseInput v-model="username" name="username_input"/>
       </div>
     </div>
-    <BaseButton class="m-auto">
-      <template #before-slot><PlayIcon /></template>DEMARRER
+    <BaseButton class="m-auto" @click="onSubmit(username)">
+      <template #before-slot><PlayIcon :scale="1.5"/></template>DEMARRER
     </BaseButton>
   </form>
 </template>

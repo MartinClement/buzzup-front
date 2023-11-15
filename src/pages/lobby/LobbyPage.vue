@@ -1,15 +1,17 @@
 <script lang="ts" setup>
 import { useRoute } from "vue-router";
+import { getItem } from "../../utils/localStorage";
+
 import BaseContainer from "../../components/container/BaseContainer.vue";
 import PanesSelector from "../../components/panes/PanesSelector.vue";
 import BaseButton from "../../components/button/BaseButton.vue";
 import PlayIcon from "../../components/icons/PlayIcon.vue";
 import BuzzupIcon from "../../components/icons/BuzzupIcon.vue";
 
-const { params: { username }} = useRoute();
+const username = getItem('buzzup_username');
 
 const users = [
-  { username: "clement", picture_url: "https://garticphone.com/images/avatar/5.svg" },
+  { username: "Clement", picture_url: "https://garticphone.com/images/avatar/5.svg" },
   { username: "pauline", picture_url: "https://garticphone.com/images/avatar/5.svg" },
 ]
 </script>
@@ -44,7 +46,7 @@ const users = [
         </PanesSelector>
         <div class="pb-4">
           <BaseButton class="m-auto">
-            <template #before-slot><PlayIcon /></template>LezzGO !
+            <template #before-slot><PlayIcon :scale="1.5"/></template>LezzGO !
           </BaseButton>
         </div>
       </div>

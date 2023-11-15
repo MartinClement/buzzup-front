@@ -5,6 +5,15 @@ import LoginForm from "./components/LoginForm.vue";
 import PanesSelector from "../../components/panes/PanesSelector.vue";
 import BaseContainer from "../../components/container/BaseContainer.vue";
 
+import { setItem } from "../../utils/localStorage";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const handleAnonymous = (username: string) => {
+  setItem('buzzup_username', username);
+  router.push({ name: 'game', params: {id: 'blbl' }});
+}
 </script>
 
 <template>
@@ -14,7 +23,7 @@ import BaseContainer from "../../components/container/BaseContainer.vue";
     <div class="flex flex-row gap-4">
       <PanesSelector :titles="['Anonymous', 'Authentification']">
         <template #panes="{ selectedPane }">
-          <AnonymousForm v-if="selectedPane === 0" :onSubmit="() => ({})"></AnonymousForm>
+          <AnonymousForm v-if="selectedPane === 0" :onSubmit="handleAnonymous"></AnonymousForm>
           <LoginForm v-if="selectedPane === 1" :onSubmit="() => ({})"></LoginForm>
         </template>
       </PanesSelector>

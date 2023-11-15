@@ -6,6 +6,13 @@ export default createRouter({
   history: createWebHistory(),
   routes: [
     { name: "home", path: '/', component: HomePage },
-    { name: "lobby", path: '/lobby/:username', component: LobbyPage },
+    {
+      name: "game",
+      path: '/game/:id',
+      redirect: { name: "game_lobby" },
+      children: [
+        { name: "game_lobby", path: "/game/:id/lobby", component: LobbyPage }
+      ],
+    },
   ],
 });
