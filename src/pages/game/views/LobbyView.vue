@@ -1,12 +1,11 @@
 <script lang="ts" setup>
-import { useRoute } from "vue-router";
-import { getItem } from "../../utils/localStorage";
+import { getItem } from "../../../utils/localStorage";
 
-import BaseContainer from "../../components/container/BaseContainer.vue";
-import PanesSelector from "../../components/panes/PanesSelector.vue";
-import BaseButton from "../../components/button/BaseButton.vue";
-import PlayIcon from "../../components/icons/PlayIcon.vue";
-import BuzzupIcon from "../../components/icons/BuzzupIcon.vue";
+import BaseContainer from "../../../components/container/BaseContainer.vue";
+import PanesSelector from "../../../components/panes/PanesSelector.vue";
+import BaseButton from "../../../components/button/BaseButton.vue";
+import PlayIcon from "../../../components/icons/PlayIcon.vue";
+import BuzzupIcon from "../../../components/icons/BuzzupIcon.vue";
 
 const username = getItem('buzzup_username');
 
